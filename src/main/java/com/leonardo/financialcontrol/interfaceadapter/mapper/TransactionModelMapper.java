@@ -1,6 +1,7 @@
 package com.leonardo.financialcontrol.interfaceadapter.mapper;
 
 import com.leonardo.financialcontrol.core.domain.Transaction;
+import com.leonardo.financialcontrol.core.domain.enuns.TransactionType;
 import com.leonardo.financialcontrol.interfaceadapter.delegate.dto.TransactionRequestData;
 import com.leonardo.financialcontrol.interfaceadapter.delegate.dto.TransactionResponse;
 import com.leonardo.financialcontrol.interfaceadapter.repository.model.TransactionModel;
@@ -35,6 +36,7 @@ public class TransactionModelMapper {
         return Transaction.builder()
                 .description(data.description())
                 .amount(data.amount())
+                .type(TransactionType.valueOf(data.type()))
                 .build();
     }
 
@@ -45,7 +47,7 @@ public class TransactionModelMapper {
         return TransactionResponse.builder()
                 .id(domain.getId())
                 .description(domain.getDescription())
-                .type(domain.getType())
+                .type(domain.getType().toString())
                 .amount(domain.getAmount())
                 .build();
     }

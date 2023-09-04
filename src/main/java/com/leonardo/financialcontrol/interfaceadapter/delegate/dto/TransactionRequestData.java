@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 @Builder
 public record TransactionRequestData(
         String description,
-        BigDecimal amount
+        BigDecimal amount,
+        String type
 ) {
 }

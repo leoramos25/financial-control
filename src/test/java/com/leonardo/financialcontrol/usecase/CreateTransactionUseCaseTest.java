@@ -1,6 +1,6 @@
 package com.leonardo.financialcontrol.usecase;
 
-import com.leonardo.financialcontrol.core.usecase.CreateIncomeTransactionUseCase;
+import com.leonardo.financialcontrol.core.usecase.CreateTransactionUseCase;
 import com.leonardo.financialcontrol.core.usecase.gateway.TransactionGateway;
 import com.leonardo.financialcontrol.core.domain.Transaction;
 import com.leonardo.financialcontrol.core.domain.enuns.TransactionType;
@@ -17,10 +17,10 @@ import static org.assertj.core.api.Assertions.assertThatNullPointerException;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
-class CreateIncomeTransactionUseCaseTest {
+class CreateTransactionUseCaseTest {
 
     @InjectMocks
-    private CreateIncomeTransactionUseCase useCase;
+    private CreateTransactionUseCase useCase;
 
     @Mock
     private TransactionGateway gateway;

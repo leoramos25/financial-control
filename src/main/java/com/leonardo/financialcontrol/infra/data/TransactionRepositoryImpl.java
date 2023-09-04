@@ -4,6 +4,8 @@ import com.leonardo.financialcontrol.interfaceadapter.repository.TransactionRepo
 import com.leonardo.financialcontrol.interfaceadapter.repository.model.TransactionModel;
 import lombok.RequiredArgsConstructor;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 public class TransactionRepositoryImpl implements TransactionRepository {
     private final SpringDataJpaTransactionRepository repository;
@@ -11,5 +13,10 @@ public class TransactionRepositoryImpl implements TransactionRepository {
     @Override
     public TransactionModel save(TransactionModel transaction) {
         return repository.save(transaction);
+    }
+
+    @Override
+    public List<TransactionModel> findAll() {
+        return repository.findAll();
     }
 }

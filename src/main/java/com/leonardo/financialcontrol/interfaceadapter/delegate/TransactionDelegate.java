@@ -3,6 +3,9 @@ package com.leonardo.financialcontrol.interfaceadapter.delegate;
 import com.leonardo.financialcontrol.interfaceadapter.delegate.dto.TransactionRequestData;
 import com.leonardo.financialcontrol.interfaceadapter.delegate.dto.TransactionResponse;
 
+import java.util.List;
+
 public interface TransactionDelegate {
-    TransactionResponse create(TransactionRequestData transaction);
+    TransactionResponse createTransaction(TransactionRequestData transaction);
+    List<TransactionResponse> getAllTransactions();
 }

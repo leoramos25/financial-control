@@ -1,6 +1,7 @@
 package com.leonardo.financialcontrol.infra.configuration;
 
-import com.leonardo.financialcontrol.core.usecase.CreateIncomeTransactionUseCase;
+import com.leonardo.financialcontrol.core.usecase.CreateTransactionUseCase;
+import com.leonardo.financialcontrol.core.usecase.GetAllTransactionsUseCase;
 import com.leonardo.financialcontrol.core.usecase.gateway.TransactionGateway;
 import com.leonardo.financialcontrol.infra.data.SpringDataJpaTransactionRepository;
 import com.leonardo.financialcontrol.infra.data.TransactionRepositoryImpl;
@@ -23,6 +24,8 @@ public class ApplicationConfiguration {
         final TransactionGateway gateway = new TransactionGatewayImpl(
                 new TransactionRepositoryImpl(transactionRepository));
 
-        return new TransactionDelegateImpl(new CreateIncomeTransactionUseCase(gateway));
+        return new TransactionDelegateImpl(
+                new CreateTransactionUseCase(gateway),
+                new GetAllTransactionsUseCase(gateway));
     }
 }
