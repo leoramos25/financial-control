@@ -1,8 +1,9 @@
 # Personal Financial Control
 
-setup postgreSQL docker container:
+Setup postgreSQL docker container:
+
 ```BASH
-$ docker-compose -f ./docker/docker-compose up -d
+$ docker-compose -f ./docker/docker-compose.yml up -d --build
 ```
 
 ---
@@ -38,20 +39,20 @@ $ docker-compose -f ./docker/docker-compose up -d
 
 ```JSON
 {
-    "balance": 0.0,
-    "transactions": [
-        {
-            "id": "string",
-            "description": "string",
-            "type": "INCOME",
-            "amount": 0.0
-        },
-        {
-            "id": "string",
-            "description": "string",
-            "type": "OUTCOME",
-            "amount": 0.0
-        }
-    ]
+  "balance": 0.0,
+  "transactions": [
+    {
+      "id": "string",
+      "description": "string",
+      "type": "INCOME",
+      "amount": 0.0
+    },
+    {
+      "id": "string",
+      "description": "string",
+      "type": "OUTCOME",
+      "amount": 0.0
+    }
+  ]
 }
 ```
