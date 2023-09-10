@@ -2,6 +2,7 @@ package com.leonardo.financialcontrol.infra.configuration;
 
 import com.leonardo.financialcontrol.core.usecase.CreateTransactionUseCase;
 import com.leonardo.financialcontrol.core.usecase.GetAllTransactionsUseCase;
+import com.leonardo.financialcontrol.core.usecase.GetBalanceUseCase;
 import com.leonardo.financialcontrol.core.usecase.gateway.TransactionGateway;
 import com.leonardo.financialcontrol.infra.data.SpringDataJpaTransactionRepository;
 import com.leonardo.financialcontrol.infra.data.TransactionRepositoryImpl;
@@ -26,6 +27,7 @@ public class ApplicationConfiguration {
 
         return new TransactionDelegateImpl(
                 new CreateTransactionUseCase(gateway),
-                new GetAllTransactionsUseCase(gateway));
+                new GetAllTransactionsUseCase(gateway),
+                new GetBalanceUseCase(gateway));
     }
 }

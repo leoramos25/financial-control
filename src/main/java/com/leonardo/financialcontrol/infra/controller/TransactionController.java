@@ -1,6 +1,7 @@
 package com.leonardo.financialcontrol.infra.controller;
 
 import com.leonardo.financialcontrol.interfaceadapter.delegate.TransactionDelegate;
+import com.leonardo.financialcontrol.interfaceadapter.delegate.dto.BalanceResponse;
 import com.leonardo.financialcontrol.interfaceadapter.delegate.dto.TransactionRequestData;
 import com.leonardo.financialcontrol.interfaceadapter.delegate.dto.TransactionResponse;
 import lombok.NonNull;
@@ -29,5 +30,10 @@ public class TransactionController {
     @GetMapping
     public ResponseEntity<List<TransactionResponse>> getAllTransactions() {
         return ResponseEntity.ok(delegate.getAllTransactions());
+    }
+
+    @GetMapping("/balance")
+    public ResponseEntity<BalanceResponse> getBalance() {
+        return ResponseEntity.ok(delegate.getBalance());
     }
 }
