@@ -6,8 +6,8 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @RequiredArgsConstructor
 public enum TransactionType {
-    INCOME("INCOME"),
-    OUTCOME("OUTCOME");
+  INCOME("INCOME"),
+  OUTCOME("OUTCOME");
 
-    private final String description;
+  private final String description;
 }

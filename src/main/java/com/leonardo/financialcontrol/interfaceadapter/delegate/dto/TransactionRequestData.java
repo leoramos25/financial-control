@@ -1,13 +1,17 @@
 package com.leonardo.financialcontrol.interfaceadapter.delegate.dto;
 
-import lombok.Builder;
-
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import java.math.BigDecimal;
+import lombok.Builder;
 
 @Builder
 public record TransactionRequestData(
-        String description,
-        BigDecimal amount,
-        String type
+    String description,
+    @NotNull(message = "amount can not be null")
+    BigDecimal amount,
+    @NotBlank(message = "type can not be empty")
+    String type
 ) {
+
 }

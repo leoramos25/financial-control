@@ -2,16 +2,15 @@ package com.leonardo.financialcontrol.core.usecase;
 
 import com.leonardo.financialcontrol.core.domain.Transaction;
 import com.leonardo.financialcontrol.core.usecase.gateway.TransactionGateway;
-import lombok.RequiredArgsConstructor;
-
 import java.util.List;
+import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public class GetAllTransactionsUseCase implements GetAllTransactions {
-    private final TransactionGateway gateway;
+  private final TransactionGateway gateway;
 
-    @Override
-    public List<Transaction> execute() {
-        return gateway.findAll();
-    }
+  @Override
+  public List<Transaction> execute() {
+    return gateway.findAll();
+  }
 }

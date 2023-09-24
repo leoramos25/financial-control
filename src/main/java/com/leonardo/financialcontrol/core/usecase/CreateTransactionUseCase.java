@@ -6,11 +6,11 @@ import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class CreateTransactionUseCase implements CreateTransaction {
-    private final TransactionGateway gateway;
+public class CreateTransactionUseCase implements InsertCommand<Transaction> {
+  private final TransactionGateway gateway;
 
-    @Override
-    public Transaction execute(final @NonNull Transaction transaction) {
-        return gateway.save(transaction);
-    }
+  @Override
+  public Transaction execute(final @NonNull Transaction transaction) {
+    return gateway.save(transaction);
+  }
 }

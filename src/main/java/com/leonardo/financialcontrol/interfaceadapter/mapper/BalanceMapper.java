@@ -7,15 +7,14 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class BalanceMapper {
-
-    public static BalanceResponse domainToResponse(Balance balance) {
-        if (balance == null) {
-            return null;
-        }
-
-        return BalanceResponse.builder()
-                .balance(balance.getBalance())
-                .transactions(balance.getTransactions().stream().map(TransactionModelMapper::domainToResponse).toList())
-                .build();
+  public static BalanceResponse domainToResponse(Balance balance) {
+    if (balance == null) {
+      return null;
     }
+
+    return BalanceResponse.builder()
+        .balance(balance.getBalance())
+        .transactions(balance.getTransactions().stream().map(TransactionModelMapper::domainToResponse).toList())
+        .build();
+  }
 }
