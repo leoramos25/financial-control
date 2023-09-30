@@ -6,7 +6,7 @@ import java.util.List;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class GetAllTransactionsUseCase implements GetAllTransactions {
+public class GetAllTransactionsUseCase implements GetAllCommand<Transaction> {
   private final TransactionGateway gateway;
 
   @Override

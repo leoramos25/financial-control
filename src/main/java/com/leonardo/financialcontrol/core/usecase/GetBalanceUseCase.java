@@ -9,7 +9,7 @@ import java.util.List;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class GetBalanceUseCase implements GetBalance {
+public class GetBalanceUseCase implements GetCommand<Balance> {
   private final TransactionGateway transactionGateway;
 
   @Override

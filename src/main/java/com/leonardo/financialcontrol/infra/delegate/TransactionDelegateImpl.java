@@ -3,9 +3,10 @@ package com.leonardo.financialcontrol.infra.delegate;
 import static com.leonardo.financialcontrol.interfaceadapter.mapper.TransactionModelMapper.dataToDomain;
 import static com.leonardo.financialcontrol.interfaceadapter.mapper.TransactionModelMapper.domainToResponse;
 
+import com.leonardo.financialcontrol.core.domain.Balance;
 import com.leonardo.financialcontrol.core.domain.Transaction;
-import com.leonardo.financialcontrol.core.usecase.GetAllTransactions;
-import com.leonardo.financialcontrol.core.usecase.GetBalance;
+import com.leonardo.financialcontrol.core.usecase.GetAllCommand;
+import com.leonardo.financialcontrol.core.usecase.GetCommand;
 import com.leonardo.financialcontrol.core.usecase.InsertCommand;
 import com.leonardo.financialcontrol.interfaceadapter.delegate.TransactionDelegate;
 import com.leonardo.financialcontrol.interfaceadapter.delegate.dto.BalanceResponse;
@@ -21,8 +22,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class TransactionDelegateImpl implements TransactionDelegate {
   private final InsertCommand<Transaction> createTransaction;
-  private final GetAllTransactions getAllTransactions;
-  private final GetBalance getBalance;
+  private final GetAllCommand<Transaction> getAllTransactions;
+  private final GetCommand<Balance> getBalance;
 
   @Override
   public TransactionResponse createTransaction(final @NonNull TransactionRequestData transaction) {
